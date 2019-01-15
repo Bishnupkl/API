@@ -20,7 +20,7 @@ class ProductCollection extends Resource
             'name'=>$this->name,
             'Total_price' => round((1 - ($this->discount) / 100) * $this->price,2),
             'rating'=>$this->review->count()>0 ?round($this->review->sum('star')/$this->review->count(),2):'No rating yet',
-            'discount'=>$this->discount,
+            'discount'=>$this->discount     ,
             'href' => [
                 'link' => route('product.show', $this->id)
             ],
