@@ -24,6 +24,9 @@ trait ExceptionTrait
         if ($this->isHttp($e)) {
            return $this->httpResponse();
         }
+
+        return parent::render($request, $e);
+
     }
 
     protected function isHttp($e)
